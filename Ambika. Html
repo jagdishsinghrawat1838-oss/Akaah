@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For My Love, Ambika ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe Script', cursive;
+    text-align: center;
+    background: linear-gradient(to bottom right, #ff758c, #8b0000);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Lock Screen */
+#lockScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #8b0000, #ff758c);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+input {
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    margin-top: 10px;
+    background: white;
+    color: #8b0000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Main Content */
+.container {
+    padding: 60px 20px;
+    display: none;
+}
+
+h1 {
+    font-size: 36px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 25px #ffd1dc; }
+}
+
+/* Photo Frame */
+.photo-frame {
+    margin: 30px auto;
+    width: 230px;
+    height: 230px;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid white;
+    box-shadow: 0 0 25px #ffd1dc;
+    animation: glowPhoto 2s infinite alternate;
+}
+
+@keyframes glowPhoto {
+    from { box-shadow: 0 0 20px #fff; }
+    to { box-shadow: 0 0 45px #ffb6c1; }
+}
+
+/* Buttons */
+.button {
+    display: block;
+    width: 85%;
+    max-width: 330px;
+    margin: 18px auto;
+    padding: 15px;
+    background: white;
+    color: #8b0000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.4s;
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+.button:hover {
+    background: #ffe4e1;
+    transform: scale(1.05);
+}
+
+.message {
+    margin-top: 40px;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Final Glowing Heading */
+.final-heading {
+    margin-top: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    animation: finalGlow 2s infinite alternate;
+}
+
+@keyframes finalGlow {
+    from { 
+        text-shadow: 0 0 10px #fff, 0 0 20px #ffb6c1; 
+        transform: scale(1);
+    }
+    to { 
+        text-shadow: 0 0 25px #fff, 0 0 40px #ff1493; 
+        transform: scale(1.05);
+    }
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-800px); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Lock Screen -->
+<div id="lockScreen">
+    <h2>🔐 A Special Surprise For Ambika</h2>
+    <p>Enter the password to unlock ❤️</p>
+    <input type="password" id="passwordInput" placeholder="Enter Password">
+    <button onclick="checkPassword()">Unlock</button>
+</div>
+
+<!-- Background Music -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g"
+frameborder="0" allow="autoplay">
+</iframe>
+
+<div class="container" id="mainContent">
+
+<h1>🌹 Ambika Negi 🌹</h1>
+<p>Happy Rose Day, My Heart ❤️</p>
+
+<div class="photo-frame">
+    <img src="ambika.jpg" alt="Ambika">
+</div>
+
+<a class="button" href="#">🌹 A Rose Just For You</a>
+<a class="button" href="#">💌 My Heart’s Letter</a>
+<a class="button" href="#">📸 Our Precious Memories</a>
+<a class="button" href="#">🎵 Our Forever Song</a>
+<a class="button" href="#">🎁 A Secret Surprise</a>
+
+<div class="message">
+Ambika,<br><br>
+I found a love… and that love is you.<br><br>
+You are my peace, my strength, my forever.<br>
+In every lifetime, I would still choose you.<br><br>
+Happy Rose Day, my queen. 🌹❤️
+</div>
+
+<div class="footer">
+Forever Yours,<br>
+Akash ❤️
+</div>
+
+<div class="final-heading">
+You Are My Forever, Ambika ❤️
+</div>
+
+</div>
+
+<script>
+function checkPassword() {
+    var input = document.getElementById("passwordInput").value;
+    if (input === "all your") {
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+    } else {
+        alert("Wrong password ❤️ Try again.");
+    }
+}
+
+setInterval(function(){
+    var heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    document.body.appendChild(heart);
+    setTimeout(function(){
+        heart.remove();
+    },6000);
+},500);
+</script>
+
+</body>
+</html>
